@@ -205,7 +205,8 @@ Since `'1'='1'` is always true, this query will return information for all users
 
 ---
 
-**As proof here is the entire screen in my laptop:** 
+<details>
+<summary>As proof here</summary>
 
 - As can be seen, the background is my desktop wallpaper.
 - In about, it displays my name.
@@ -215,3 +216,9 @@ Since `'1'='1'` is always true, this query will return information for all users
     
     <img width="1440" alt="Untitled 5" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/ada31e8e-e0a5-4457-a164-23e01563d675">
 
+</details>
+
+---
+
+
+# XSS (Cross site scripting)
