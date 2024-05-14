@@ -33,6 +33,8 @@ SELECT * FROM users WHERE username = 'admin' AND password = '' OR '1'='1';
 
 Since `'1'='1'` is always true, this query will return information for all users in the database, allowing the attacker to bypass authentication and log in to the system.
 </details>
+
+
 ---
 
 <img width="943" alt="Screenshot 2024-05-14 at 3 42 56 in the afternoon" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/9e23f1c0-361e-44a1-861c-f1b0baa2c69d">
