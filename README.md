@@ -39,6 +39,10 @@ Since `'1'='1'` is always true, this query will return information for all users
 
 <img width="943" alt="Screenshot 2024-05-14 at 3 42 56 in the afternoon" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/9e23f1c0-361e-44a1-861c-f1b0baa2c69d">
 
+
+<details>
+<summary>Low-level security</summary>
+    
 ### DVWA SQL Injection - Low level
 
 1. **View Source Code**:
@@ -85,8 +89,14 @@ Since `'1'='1'` is always true, this query will return information for all users
     - **Crack the hash:** Even though passwords are hashed but still try to crack it with library attack.
         <img width="850" alt="Screenshot_2024-05-14_at_7 47 39_in_the_evening" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/58f34eb1-ae2b-48c5-bb52-4e0d4c824e8d">      
 
+</details>
+
+
 ---
 
+<details>
+<summary>Medium-level security</summary>
+    
 ### DVWA SQL Injection - Medium level
 
 1. **View Source Code**:
@@ -142,10 +152,12 @@ Since `'1'='1'` is always true, this query will return information for all users
         
         <img width="748" alt="Untitled (2)" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/bf31b415-93fa-42aa-a2dc-42d4504a0d3c">
 
-        
+</details>        
 
 ---
 
+<details>
+<summary>High-level security</summary>
 ### DVWA SQL Injection - High level
 
 1. **View Source Code**:
@@ -189,7 +201,7 @@ Since `'1'='1'` is always true, this query will return information for all users
         
         <img width="1440" alt="Untitled (3)" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/19cfcb24-7e6a-4fee-8c88-08c20b49dcd1">
 
-        
+</details>        
 
 ---
 
@@ -201,4 +213,5 @@ Since `'1'='1'` is always true, this query will return information for all users
 - The navigation bar on the middle-right are from my screen.
 - Look at another window behind setting and finder, that is kali VM is running and I was testng on it.
     
-    ![Untitled](DVWA%20-%20SQL%20Injection%20&%20XSS%20(Cross%20Site%20Scripting)%209aab62f0a00d4a00a8204ace8cb479c4/Untitled%205.png)
+    <img width="1440" alt="Untitled 5" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/ada31e8e-e0a5-4457-a164-23e01563d675">
+
