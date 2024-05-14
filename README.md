@@ -1,9 +1,10 @@
 # DVWA - SQL Injection & XSS (Cross Site Scripting)
 
 # SQL Injection
+<details>
+<summary>Introduction of SQL Injection?</summary>
 
 ### What is SQL Injection?
-
 SQL Injection is a type of web security vulnerability that allows an attacker to manipulate an application's database query by inserting malicious SQL code into input fields, leading to unauthorized access or data manipulation.
 
 ### Basic Principles of SQL Injection
@@ -31,7 +32,7 @@ SELECT * FROM users WHERE username = 'admin' AND password = '' OR '1'='1';
 ```
 
 Since `'1'='1'` is always true, this query will return information for all users in the database, allowing the attacker to bypass authentication and log in to the system.
-
+</details>
 ---
 
 <img width="943" alt="Screenshot 2024-05-14 at 3 42 56 in the afternoon" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/9e23f1c0-361e-44a1-861c-f1b0baa2c69d">
