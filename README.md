@@ -126,16 +126,19 @@ Since `'1'='1'` is always true, this query will return information for all users
     - `medium.php`  script try to avoid user input by giving dropdown selection instead.
     - It is still able to change the script in `inspect element`
         
-        ![Screenshot 2024-05-14 at 8.15.46 in the evening.png](DVWA%20-%20SQL%20Injection%20&%20XSS%20(Cross%20Site%20Scripting)%209aab62f0a00d4a00a8204ace8cb479c4/Screenshot_2024-05-14_at_8.15.46_in_the_evening.png)
         
+        <img width="754" alt="Screenshot 2024-05-14 at 8 15 46 in the evening" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/07afd223-6374-4ea8-9953-cdb9a0448222">
+
 3. **Vulnerabilities Exploitation**:
     - **Get the usernames and passwords from database :**  edit in inspector mode by inserting script as in the picture below:
         
-        ![Untitled](DVWA%20-%20SQL%20Injection%20&%20XSS%20(Cross%20Site%20Scripting)%209aab62f0a00d4a00a8204ace8cb479c4/Untitled%202.png)
+        <img width="843" alt="Untitled (1)" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/ab7335b5-98ee-415f-bf4a-b718ff7d9b98">
+
         
     - **Submit:**
         
-        ![Untitled](DVWA%20-%20SQL%20Injection%20&%20XSS%20(Cross%20Site%20Scripting)%209aab62f0a00d4a00a8204ace8cb479c4/Untitled%203.png)
+        <img width="748" alt="Untitled (2)" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/bf31b415-93fa-42aa-a2dc-42d4504a0d3c">
+
         
 
 ---
@@ -175,12 +178,14 @@ Since `'1'='1'` is always true, this query will return information for all users
     - `High.php`  script want to avoid direct input so it call new popup window for input, from source code can be seen that it is very similar to low-level but it is different here with `LIMIT 1;` in the query.
     - However, still can do `’ UNION SELECT user, password FROM users#` use the hashtag to ignore the condition.
         
-        ![Screenshot 2024-05-15 at 12.21.10 at night.png](DVWA%20-%20SQL%20Injection%20&%20XSS%20(Cross%20Site%20Scripting)%209aab62f0a00d4a00a8204ace8cb479c4/Screenshot_2024-05-15_at_12.21.10_at_night.png)
+        <img width="751" alt="Screenshot 2024-05-15 at 12 21 10 at night" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/39d3376e-af17-44ad-9b03-58af3b3e9d7f">
+
         
 3. **Vulnerabilities Exploitation**:
     - **Submit:**
         
-        ![Untitled](DVWA%20-%20SQL%20Injection%20&%20XSS%20(Cross%20Site%20Scripting)%209aab62f0a00d4a00a8204ace8cb479c4/Untitled%204.png)
+        <img width="1440" alt="Untitled (3)" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/19cfcb24-7e6a-4fee-8c88-08c20b49dcd1">
+
         
 
 ---
