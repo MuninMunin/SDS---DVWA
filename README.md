@@ -2,7 +2,37 @@
 
 # SQL Injection
 
-[How SQL Injection work?](https://www.notion.so/How-SQL-Injection-work-74fe9996d99b48af9afb0a1c941ec418?pvs=21)
+### What is SQL Injection?
+
+SQL Injection is a type of web security vulnerability that allows an attacker to manipulate an application's database query by inserting malicious SQL code into input fields, leading to unauthorized access or data manipulation.
+
+### Basic Principles of SQL Injection
+
+SQL Injection typically occurs when an application directly embeds user input into SQL queries without sufficient validation or sanitization. When an application incorporates user input as part of an SQL statement, an attacker can craft specific inputs to alter the final SQL statement to achieve their goals, such as bypassing authentication, reading, or modifying database data.
+
+### Example
+
+Suppose there is a simple login form where a user inputs a username and password, and the system executes the following SQL query to verify the user's identity:
+
+```sql
+SELECT * FROM users WHERE username = 'user input username' AND password = 'user input password';
+```
+
+If the user inputs the following:
+
+- Username: `admin`
+- Password: `' OR '1'='1`
+
+The generated SQL statement would become:
+
+```sql
+SELECT * FROM users WHERE username = 'admin' AND password = '' OR '1'='1';
+
+```
+
+Since `'1'='1'` is always true, this query will return information for all users in the database, allowing the attacker to bypass authentication and log in to the system.
+
+---
 
 <img width="943" alt="Screenshot 2024-05-14 at 3 42 56 in the afternoon" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/9e23f1c0-361e-44a1-861c-f1b0baa2c69d">
 
