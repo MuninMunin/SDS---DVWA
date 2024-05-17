@@ -158,6 +158,7 @@ Since `'1'='1'` is always true, this query will return information for all users
 
 <details>
 <summary>High-level security</summary>
+    
 ### DVWA SQL Injection - High level
 
 1. **View Source Code**:
