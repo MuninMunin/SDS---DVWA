@@ -373,3 +373,94 @@ Since `'1'='1'` is always true, this query will return information for all users
 </details>
 
 ---
+
+# Stored based XSS
+
+<details>
+
+<summary>low-level</summary>
+
+### DVWA XSS - Low level
+
+1. **The URL**:
+    
+    ```php
+    // original URL
+    127.0.0.1/dvwa/vulunerabilities/xss-
+    ```
+    
+2. **Testing with inserting javascript into URL**:
+    
+    ```jsx
+    <script> alert(1) </script>
+    ```
+    
+3. **Vulnerabilities Found**:
+As can be seen, the page now stored the script which alert(1). Whenever reload the page it will keep popup message “1” as inserted script. This is critical risky since everyone who log into the webpage can be victim.
+    
+    <img width="1377" alt="Untitled (4)" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/8ffe5a4d-3dd5-4ada-8a77-57fe32cf349d">
+
+    
+4. **Vulnerabilities Exploitation**:
+Now I can redirect everyone to my webpage to access more attacks.
+    - I edit html source code `maxlength="50"` to `maxlength=”500”`
+        
+        <img width="614" alt="Screenshot 2024-05-18 at 5 15 35 in the afternoon" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/f53d7328-577a-4f61-bfee-e3a242a6fd0b">
+
+        
+    - **The Affected URL**: https://attack.com.
+        
+        <img width="1345" alt="Screenshot 2024-05-18 at 5 19 15 in the afternoon" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/986db103-ba44-45d9-9121-1ae5041f1019">
+
+        
+    - **Result:** Now victims are redirected to this new webpage. (attack.com is just a random webpage online).
+        
+        <img width="1334" alt="Screenshot 2024-05-18 at 5 21 13 in the afternoon" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/e22f5d9f-852d-4602-8f61-162bb6005cd9">
+        
+</details>
+
+---
+
+<details>
+
+<summary>medium-level</summary>
+
+### DVWA XSS - Medium level
+
+1. **Edit `maxlength` and Testing with inserting javascript through input**:
+    
+    <img width="762" alt="Screenshot 2024-05-19 at 5 19 43 in the afternoon" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/675ad3b0-25b6-416d-b38d-a5be621e3a99">
+
+    
+    ```jsx
+    /*Name:*/ <script> alert(1) </script>
+    /*Message:*/<script> alert(1) </script>
+    ```
+    
+    - It filtering out <script>
+        
+       <img width="550" alt="Screenshot 2024-05-19 at 5 20 42 in the afternoon" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/8f3719d3-934e-4205-b076-8d69e8a96750">
+
+        
+    - Testing with capital letter:
+        
+        ```jsx
+        /*Name:*/ <SCRIPT> alert(1) </SCRIPT>
+        /*Message:*/<SCRIPT> alert(1) </SCRIPT>
+        ```
+        
+2. **Vulnerabilities Found**:
+    
+    <img width="1213" alt="Screenshot 2024-05-19 at 5 23 26 in the afternoon" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/3f6ad574-09d4-4541-af11-009121148e3d">
+
+    
+3. **Vulnerabilities Exploitation**:
+    - **The vulnerable script:** `<script> alert(document.cookie) </script>` to get cookie or `<SCRIPT> window.location.href=”http://xxx.com/XSS_TEST” </SCRIPT>` to redirect user to the webpage.
+
+</details>
+
+---
+
+
+
+
