@@ -207,6 +207,23 @@ Since `'1'='1'` is always true, this query will return information for all users
 ---
 
 <details>
+<summary> To prevent SQL injection</summary>
+    
+## Prevent SQL injection
+
+As can be seen in the result of injection in all the three security level, without a proper implement and security prevention, user's datas can be secured. Even though user's passwords are hashed, but if hacker want, the passwords still can be cracked. Therefore what developer can do is to implement more securily layer to the system. To prevent SQL injection:
+
+1. Use prepared statement parameterized query.
+2. Input validation and sanatization to filter out special characters and allow only specific character and limit input length (not on browser-side because user can go to edit the HTML code and attack it.)
+3. Database permission limitation to minimize the process of injection.
+
+    
+</details>
+
+
+---
+
+<details>
 <summary>As proof here</summary>
 
 - As can be seen, the background is my desktop wallpaper.
@@ -460,6 +477,31 @@ Now I can redirect everyone to my webpage to access more attacks.
 </details>
 
 ---
+
+# Prevent XSS
+
+## 1. Input Validation and Filtering
+
+- **Validate Inputs**:
+  - Implement strict validation rules to ensure inputs with expected formats. 
+  - Reject inputs containing suspicious or dangerous content.
+
+- **Sanitize Inputs**:
+  - Use libraries to sanitize inputs by removing or escaping potentially harmful characters.
+  - For example, in coding can use certain library to escape HTML javascript special characters.
+
+ 
+## 2. Avoid Unsafe Practice
+
+- Avoid inner html and inner javascript.
+- Ignore security priciple in developing product.
+- Avoid allowing user directly input script. 
+
+## 3. Output Encoding
+
+- Encode content before inserting into html, css, javascript or URL.
+
+
 
 
 
